@@ -1,0 +1,44 @@
+{
+  "name": "express-ts-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "App.js",
+  "scripts": {
+    "start": "ts-node src/server/index.ts",
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "logs": "heroku logs --tail",
+    "scale-up": "heroku ps:scale web=1",
+    "scale-down": "heroku ps:scale web=0",
+    "lint": "tslint -c tslint.json 'src/**/*.ts'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.6",
+    "prettier": "^2.0.5",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.3.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@types/node": "^13.13.4",
+    "express": "^4.17.1",
+    "ts-node": "^8.9.1",
+    "typescript": "^3.8.3"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "**/*.test.ts",
+      "**/*.spec.ts",
+      ".git",
+      "node_modules"
+    ],
+    "watch": [
+      "src/server"
+    ],
+    "exec": "npm start",
+    "ext": "ts"
+  }
+}
