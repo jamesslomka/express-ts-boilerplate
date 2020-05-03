@@ -1,0 +1,10 @@
+version: '2.0'
+services:
+  bmw:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/usr/src/app/
+      - /usr/src/node_modules
+    command: npm run dev
