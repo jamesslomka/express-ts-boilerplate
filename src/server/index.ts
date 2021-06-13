@@ -1,4 +1,5 @@
 import App from './App';
+import config from 'config';
 
 const app = new App();
 
@@ -32,7 +33,7 @@ function startApp(): void {
     process.on('unhandledRejection', onUnhandledRejection);
     process.on('SIGTERM', onSigterm);
     console.info('Starting application...');
-    app.start().catch(onUncaughtException);
+    app.start(config.get<number>('port')).catch(onUncaughtException);
 }
 
 startApp();

@@ -3,7 +3,7 @@ services:
   my-app:
     build: .
     ports:
-      - "5000:5000"
+      - "5000:80"
     volumes:
       - .:/usr/src/app/
       - /usr/src/node_modules
