@@ -1,0 +1,27 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:@typescript-eslint/recommended", // Base rules
+    "prettier/@typescript-eslint", // Disable ESLint rules that would conflict with prettier
+    "plugin:prettier/recommended" // Display prettier errors as ESLint errors.
+  ],
+  "rules": {
+    "sort-imports": [
+      "error",
+      {
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "@typescript-eslint/no-this-alias": [
+      "error",
+      {
+        "allowDestructuring": true,
+        // Allow `const { props, state } = this`; false by default
+        "allowedNames": [
+          "self"
+        ]
+        // Allow `const self = this`; `[]` by default
+      }
+    ]
+  }
+}
